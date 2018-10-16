@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint **.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:js": "eslint *.js",
+    "lint:style": "stylelint *.less",
+    "lint:json": "jsonlint --quiet *.json",
+    "test": "npm run lint:js && npm run lint:style && npm run lint:json && mocha tests/"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^5.6.1"
+    "chai": "^4.1.2",
+    "eslint": "^5.6.1",
+    "jsonlint": "^1.6.2",
+    "mocha": "^4.0.1",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0"
   }
 }
